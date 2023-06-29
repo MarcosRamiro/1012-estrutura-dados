@@ -164,6 +164,68 @@ public class App
 
 
 
+        /**
+         * Como fazer o acesso direto a um elemento da lista atráves do índice?
+         */
+
+        System.out.println();
+        System.out.println();
+        System.out.println(funcionariosList.get(0));
+        System.out.println(funcionariosList.size());
+
+        /**
+         * Como fazer a remoção de elementos da lista?
+         */
+
+        System.out.println();
+        System.out.println("=========");
+        funcionariosList.add(funcionario1);
+        funcionariosList.remove(funcionario1);
+
+        for (Funcionario funcionario : funcionariosList) {
+            System.out.println(funcionario);
+        }
+
+        // outra forma de remover (Error: checkForComodification)
+//        for (Funcionario funcionario : funcionariosList) {
+//            if(funcionario.nome().equalsIgnoreCase("Maria")){
+//                funcionariosList.remove(funcionario);
+//            }
+//        }
+//
+//        System.out.println();
+//        System.out.println("=========");
+//
+//        for (Funcionario funcionario : funcionariosList) {
+//            System.out.println(funcionario);
+//        }
+
+        // uso mais comum para remover/filtrar item(ns) da lista
+
+        List<Funcionario> novaLista = new ArrayList<>(funcionariosList.size());
+
+        for (Funcionario funcionario : funcionariosList) {
+           if(!funcionario.nome().equalsIgnoreCase("Maria")){
+               novaLista.add(funcionario);
+           }
+        }
+
+
+        System.out.println();
+        System.out.println("********");
+        for (Funcionario funcionario : novaLista) {
+            System.out.println(funcionario);
+        }
+
+
+
+
+
+
+
+
+
+
 
 
 

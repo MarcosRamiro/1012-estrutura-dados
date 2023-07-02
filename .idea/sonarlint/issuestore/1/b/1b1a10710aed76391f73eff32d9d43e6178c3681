@@ -1,15 +1,0 @@
-
-	java:S116"`Rename this field "DIGITE_OPCAO_DESEJADA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€«ìûÿÿÿÿ8¦‹ç¨1
-C
-java:S1170"!Make this final field static too.(€«ìûÿÿÿÿ8¦‹ç¨1
-q
-java:S1450"URemove the "pessoa" field and declare it as a local variable in the relevant methods.(ËÜÕ8§‹ç¨1
-W
-java:S1854I";Remove this useless assignment to local variable "salario".(’Èö'8¯‹ç¨1
-U	java:S106D"9Replace this use of System.out or System.err by a logger.(ÖªÅ­8°‹ç¨1
-U	java:S106F"9Replace this use of System.out or System.err by a logger.(ÈÊÆ8°‹ç¨1
-U	java:S106L"9Replace this use of System.out or System.err by a logger.(õ£¸ø8±‹ç¨1
-P
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8¹“î¨1
-F
-java:S1068"*Remove this unused "pessoa" private field.(ËÜÕ8¹“î¨1

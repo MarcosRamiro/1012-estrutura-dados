@@ -1,4 +1,4 @@
-package tech.ada.java.array;
+package tech.ada.java.linkedlist;
 
 public class ListaLigada {
 

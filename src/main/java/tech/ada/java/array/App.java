@@ -1,5 +1,7 @@
 package tech.ada.java.array;
 
+import tech.ada.java.Funcionario;
+
 import java.util.*;
 
 public class App

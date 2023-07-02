@@ -1,4 +1,4 @@
-package tech.ada.java.array;
+package tech.ada.java;
 
 public record Funcionario(Integer id, String nome, String departamento, double salario)
         implements Comparable<Funcionario> {

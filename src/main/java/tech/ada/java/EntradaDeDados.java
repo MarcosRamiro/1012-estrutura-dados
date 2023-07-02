@@ -1,5 +1,6 @@
-package tech.ada.java.array;
+package tech.ada.java;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class EntradaDeDados implements AutoCloseable {
@@ -8,10 +9,17 @@ public class EntradaDeDados implements AutoCloseable {
 
     public EntradaDeDados(){
         scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
     }
 
     public String obterEntrada(){
         return scanner.nextLine();
+    }
+
+    public Double obterEntradaAsDouble(){
+        double retorno = scanner.nextDouble();
+        scanner.nextLine(); // limpar buffer
+        return retorno;
     }
 
     @Override

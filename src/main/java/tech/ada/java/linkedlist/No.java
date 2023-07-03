@@ -1,19 +1,19 @@
 package tech.ada.java.linkedlist;
 
-public class No {
-    private String dado;
+public class No<T extends Comparable> {
+    private T dado;
     private No proximo;
 
-    public No(String dado){
+    public No(T dado){
         this.dado = dado;
         this.proximo = null;
     }
 
-    public String getDado() {
+    public T getDado() {
         return dado;
     }
 
-    public void setDado(String dado) {
+    public void setDado(T dado) {
         this.dado = dado;
     }
 

@@ -1,6 +1,6 @@
 package tech.ada.java.linkedlist;
 
-public class ListaLigada {
+public class ListaLigada<T extends Comparable> {
 
     private No inicio;
     private No ultimo;
@@ -10,9 +10,9 @@ public class ListaLigada {
         this.ultimo = null;
     }
 
-    public void adicionar(String dado){
+    public void adicionar(T dado){
 
-        No novoNo = new No(dado);
+        No<T> novoNo = new No(dado);
 
         if(this.inicio == null){
             this.inicio = novoNo;
@@ -24,12 +24,12 @@ public class ListaLigada {
         }
     }
 
-    public String remover(String dado){
+    public T remover(T dado){
 
         if(this.inicio == null)
             return null;
 
-        if(this.inicio.getDado().equalsIgnoreCase(dado)){
+        if(this.inicio.getDado().compareTo(dado) == 0){
             No inicioAnterior = this.inicio;
             this.inicio = this.inicio.getProximo();
             inicioAnterior.setProximo(null);
@@ -42,7 +42,7 @@ public class ListaLigada {
 
         while (elementoAtual != null){
 
-            if (elementoAtual.getDado().equalsIgnoreCase(dado)){
+            if (elementoAtual.getDado().compareTo(dado) == 0){
                 elementoAnterior.setProximo(elementoAtual.getProximo());
                 elementoAtual.setProximo(null);
                 elementoAtual.setDado(null);
@@ -58,12 +58,12 @@ public class ListaLigada {
     }
 
     public void display(){
-        System.out.print("[");
+        System.out.println("[");
 
         No elementoAtual = this.inicio;
 
         while (elementoAtual != null){
-            System.out.print(elementoAtual.getDado() + " ");
+            System.out.println("\t" + elementoAtual.getDado() + " ");
             elementoAtual = elementoAtual.getProximo();
         }
         System.out.println("]");

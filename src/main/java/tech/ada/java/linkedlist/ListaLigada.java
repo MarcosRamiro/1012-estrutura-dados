@@ -10,25 +10,17 @@ public class ListaLigada {
         this.ultimo = null;
     }
 
-    public void add(String dado){
+    public void adicionar(String dado){
 
         No novoNo = new No(dado);
 
         if(this.inicio == null){
-            this.inicio = novoNo; // 1o elemento (A)
-            this.ultimo = novoNo; // 1o elemento (A)
+            this.inicio = novoNo;
+            this.ultimo = novoNo;
         } else {
             No ultimoElemento = this.ultimo;
             ultimoElemento.setProximo(novoNo);
-            this.ultimo = novoNo; // B
-
-            // Sem o atributo "último"
-//            No elementoAtual = this.inicio;
-//
-//            while(elementoAtual.getProximo() != null){
-//                elementoAtual = elementoAtual.getProximo();
-//            }
-//            elementoAtual.setProximo(novoNo);
+            this.ultimo = novoNo;
         }
     }
 

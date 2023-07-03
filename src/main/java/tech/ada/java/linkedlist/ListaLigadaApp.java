@@ -4,12 +4,12 @@ public class ListaLigadaApp {
 
     public static void main(String... args){
         ListaLigada lista = new ListaLigada();
-        lista.add("A");
-        lista.add("B");
-        lista.add("C");
-        lista.add("D");
-        lista.add("E");
-        lista.add("F");
+        lista.adicionar("A");
+        lista.adicionar("B");
+        lista.adicionar("C");
+        lista.adicionar("D");
+        lista.adicionar("E");
+        lista.adicionar("F");
         lista.display();
 
         lista.remover("F");

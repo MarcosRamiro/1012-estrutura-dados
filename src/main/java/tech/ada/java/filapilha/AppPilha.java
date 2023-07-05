@@ -11,10 +11,17 @@ public class AppPilha {
         Funcionario f3 = new Funcionario(3, "Marcelo", "Operação", 1780.50);
         Funcionario f4 = new Funcionario(4, "Marcelo", "Tecnologia", 1780.50);
 
-        ProcessarPagamentosPilha processarPagamentos = new ProcessarPagamentosPilha();
+        ProcessarPagamentos processarPagamentos = new ProcessarPagamentosPilha();
+        processarPagamentos.inserir(f1);
+        processarPagamentos.inserir(f2);
+        processarPagamentos.inserir(f3);
+        processarPagamentos.inserir(f4);
 
+        processarPagamentos.visualizar();
 
+        processarPagamentos.processar();
 
+        processarPagamentos.visualizar();
 
     }
 

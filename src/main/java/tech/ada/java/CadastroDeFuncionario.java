@@ -20,8 +20,6 @@ public class CadastroDeFuncionario {
 
     public void processar(){
 
-
-
             String opcaoDigitada = obterEntradaDoUsuario(leitor);
 
             while(!escolheuSair(opcaoDigitada)){

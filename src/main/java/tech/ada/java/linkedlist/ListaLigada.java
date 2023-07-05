@@ -2,12 +2,32 @@ package tech.ada.java.linkedlist;
 
 public class ListaLigada<T extends Comparable> {
 
-    private No inicio;
-    private No ultimo;
+    private No<T> inicio;
+
+    private No<T> ultimo;
 
     public ListaLigada(){
         this.inicio = null;
         this.ultimo = null;
+    }
+
+    public boolean isListaVazia(){
+        return this.inicio == null;
+    }
+
+    public void adicionarNoComeco(T dado){
+        if(this.inicio == null){
+            this.adicionar(dado);
+        } else {
+            No<T> novoNo = new No(dado);
+            No<T> primeiroElemento = this.inicio;
+            novoNo.setProximo(primeiroElemento);
+            this.inicio = novoNo;
+        }
+    }
+
+    public ListaIterator<T> iterar(){
+        return new ListaIterator<T>(this.inicio);
     }
 
     public void adicionar(T dado){
@@ -68,5 +88,12 @@ public class ListaLigada<T extends Comparable> {
         }
         System.out.println("]");
 
+    }
+
+    public T getInicio() {
+        if (inicio == null)
+            return null;
+
+        return inicio.getDado();
     }
 }

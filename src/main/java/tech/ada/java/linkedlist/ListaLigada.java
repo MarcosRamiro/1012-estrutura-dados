@@ -1,6 +1,9 @@
 package tech.ada.java.linkedlist;
 
-public class ListaLigada<T extends Comparable> {
+import java.util.Iterator;
+import java.util.function.Consumer;
+
+public class ListaLigada<T> implements Iterable<T> {
 
     private No<T> inicio;
 
@@ -26,9 +29,6 @@ public class ListaLigada<T extends Comparable> {
         }
     }
 
-    public ListaIterator<T> iterar(){
-        return new ListaIterator<T>(this.inicio);
-    }
 
     public void adicionar(T dado){
 
@@ -49,7 +49,7 @@ public class ListaLigada<T extends Comparable> {
         if(this.inicio == null)
             return null;
 
-        if(this.inicio.getDado().compareTo(dado) == 0){
+        if(this.inicio.getDado().equals(dado)){
             No inicioAnterior = this.inicio;
             this.inicio = this.inicio.getProximo();
             inicioAnterior.setProximo(null);
@@ -62,7 +62,7 @@ public class ListaLigada<T extends Comparable> {
 
         while (elementoAtual != null){
 
-            if (elementoAtual.getDado().compareTo(dado) == 0){
+            if (elementoAtual.getDado().equals(dado)){
                 elementoAnterior.setProximo(elementoAtual.getProximo());
                 elementoAtual.setProximo(null);
                 elementoAtual.setDado(null);
@@ -96,4 +96,10 @@ public class ListaLigada<T extends Comparable> {
 
         return inicio.getDado();
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListaIterator<>(this.inicio);
+    }
+
 }

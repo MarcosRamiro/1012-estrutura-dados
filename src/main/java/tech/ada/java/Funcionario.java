@@ -32,5 +32,23 @@ public record Funcionario(Integer id, String nome, String departamento, double s
 
         return resultado;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Funcionario that = (Funcionario) o;
+
+        if (!id.equals(that.id)) return false;
+        return nome.equals(that.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + nome.hashCode();
+        return result;
+    }
 }
 

@@ -1,6 +1,6 @@
 package tech.ada.java.linkedlist;
 
-public class No<T extends Comparable> {
+public class No<T> {
     private T dado;
     private No proximo;
 

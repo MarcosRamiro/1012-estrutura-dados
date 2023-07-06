@@ -9,7 +9,6 @@ public class App
     public static void main(String[] args ){
 
         Funcionario[] funcionarios = new Funcionario[3];
-
         Funcionario funcionario1 = new Funcionario(1, "Maria", "Vendas", 1000.00);
         Funcionario funcionario2 = new Funcionario(2, "João", "Tecnologia", 1500.00);
         Funcionario funcionario3 = new Funcionario(3, "Carlos", "Vendas", 2500.00);

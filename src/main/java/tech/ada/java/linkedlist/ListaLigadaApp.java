@@ -2,23 +2,13 @@ package tech.ada.java.linkedlist;
 
 import tech.ada.java.Funcionario;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListaLigadaApp {
 
     public static void main(String... args){
-//        ListaLigada<String> lista = new ListaLigada();
-//        lista.adicionar("A");
-//        lista.adicionar("B");
-//        lista.adicionar("C");
-//        lista.adicionar("D");
-//        lista.adicionar("E");
-//        lista.adicionar("F");
-//        lista.display();
-//
-//        lista.remover("F");
-//        lista.remover("X");
-//        lista.display();
 
         Funcionario f1 = new Funcionario(1, "Maria", "Pessoas", 2323.56);
         Funcionario f2 = new Funcionario(2, "João", "Tecnologia", 1500.00);
@@ -35,7 +25,15 @@ public class ListaLigadaApp {
 
         funcionarios.remover(f2);
 
-        funcionarios.display();
+        for(Iterator<Funcionario> iter = funcionarios.iterator(); iter.hasNext();){
+            System.out.println("Funcionario: " + iter.next());
+        }
+
+        List<String> lista = new ArrayList<>();
+
+
+
+
 
     }
 

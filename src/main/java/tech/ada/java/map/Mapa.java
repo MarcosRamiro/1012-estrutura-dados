@@ -11,7 +11,7 @@ public class Mapa<K, V> {
     private ListaLigada<NoMap<K,V>>[] tabela;
 
     public Mapa(){
-        this.tamanho = 10;
+        this.tamanho = 1_000;
         this.tabela = new ListaLigada[tamanho];
         for (int i = 0; i < tamanho; i++) {
             this.tabela[i] = new ListaLigada<>();

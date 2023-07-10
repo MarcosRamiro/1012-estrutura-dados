@@ -1,0 +1,101 @@
+id;nome;departamento;salario
+6;Isabela Maria Camacho Guerra de Oliveira;MARKETING;1367.40
+27;Juan Micael Aranda Filho;RECURSOS HUMANOS;1406.90
+57;Christian Escobar Fontes;COMERCIAL;1406.90
+87;Jorge Feliciano Jr.;RISCOS;1466.90
+79;Jack Galvão Gomes;RISCOS;1506.50
+16;Josilda Mikaella Duarte;JURÍDICO;1521.90
+19;Paulo Arthur Flores de Salazar;RECURSOS HUMANOS;1576.60
+55;Álvaro Bittencourt;RISCOS;1589.60
+46;Laura Bittencourt;MARKETING;1676.40
+76;Filipe Juliano Colaço de Fernandes;OPERAÇÃO;1676.40
+12;Matheus Zeca Jimenes Mourão;OPERAÇÃO;1676.80
+25;Adriano Rivaldo Delgado;COMERCIAL;1687.60
+49;Davi Mendonça Neto;COMERCIAL;1706.50
+31;Salomão Mara de Carrara;RISCOS;1839.30
+61;Christopher Flores de Lozano;FINANÇAS;1839.30
+4;Elizabeth Cibele de Branco;OPERAÇÃO;1867.90
+37;Taís Eva de Faro;FINANÇAS;1885.60
+67;Aurélio Casanova Neto;RECURSOS HUMANOS;1885.60
+37;Taís Eva de Faro;JURÍDICO;1885.60
+85;Júlio Romildo Ferminiano;FINANÇAS;1889.60
+51;Alexandre Henrique Ferreira Sobrinho;RECURSOS HUMANOS;1903.70
+21;Márcia Galindo;FINANÇAS;1943.70
+14;Ália Sofia de Bezerra;MARKETING;1950.70
+35;Jeferson Osías Galvão Neto;RECURSOS HUMANOS;1957.10
+65;Beto Everton Aranda Balestero;COMERCIAL;1957.10
+44;Fabiano Assunção Dias;OPERAÇÃO;2017.30
+40;T bata Fab¡ola Salazar de Serrano;JURÍDICO;2029.90
+70;Carlos Duarte Naves;MARKETING;2029.90
+81;Lili Luzinete Balestero;COMERCIAL;2103.70
+28;Humberto Dominato de Madeira;OPERAÇÃO;2112.30
+9;Abril Zara Azevedo de Pontes;COMERCIAL;2124.60
+33;Emílio Demilson de Caldeira Filho;COMERCIAL;2138.80
+63;Fabiana Verônica Cortês;RISCOS;2138.80
+53;Ornela Jussara de Camacho;FINANÇAS;2148.10
+58;Paulo Rodrigo Bezerra Sobrinho;TI;2212.30
+88;Anna Rute Ávila G¢is;JURÍDICO;2212.30
+83;Cleberson Israel Correia de Domingues;RECURSOS HUMANOS;2248.10
+42;Elizabeth Cervantes de Paiva;TI;2251.70
+18;Taís Valdirene Ferreira Gonçalves de Figueiredo;TI;2272.50
+18;Taís Valdirene Ferreira Gonçalves de Figueiredo;MARKETING;2272.50
+23;Samanta Galhardo Prates;RISCOS;2284.80
+74;Ana Bete Delatorre de Gusmão;TI;2317.30
+74;Ana Bete Delatorre de Gusmão;FINANÇAS;2317.30
+60;Mia Ferreira do Piauí;OPERAÇÃO;2341.40
+90;Carlos Rodrigo Balestero Matias;TI;2341.40
+54;Matias Marques Neto;MARKETING;2400.30
+84;horácio Adriano Feliciano Valˆncia;OPERAÇÃO;2440.30
+2;Eduardo Montenegro Sobrinho;TI;2499.10
+2;Eduardo Montenegro Sobrinho;OPERAÇÃO;2499.10
+45;Felipe Leandro Pena Pontes Cavalcante;FINANÇAS;2535.50
+24;Lucas Wilson Feliciano de Cardoso;JURÍDICO;2540.20
+30;Mateus Fidalgo de Gusmão;MARKETING;2541.40
+30;Mateus Fidalgo de Gusmão;RECURSOS HUMANOS;2541.40
+39;Ivana Suzanne Mascarenhas Nunes;RISCOS;2721.70
+75;Angélica Sabrina Bezerra Dominato da Encarnação;RECURSOS HUMANOS;2735.50
+48;Estevão José de Jimenes Jr.;JURÍDICO;2741.30
+36;Elano Barreto da Silva;OPERAÇÃO;2741.50
+8;Henrique Bonilha Filho;JURÍDICO;2802.30
+72;Pedro Adriano Ávila Neves;JURÍDICO;2851.70
+13;Amanda Duarte de Meireles;FINANÇAS;2985.40
+69;João Paulo Fonseca;FINANÇAS;3121.70
+15;Santiago David Domingues de Leal;RISCOS;3124.30
+66;Ali Xerxes de Caldeira Sobrinho;TI;3141.50
+78;Kiara Garcia de Jimenes;MARKETING;3241.30
+11;Jácomo Aragão Ferraz;RECURSOS HUMANOS;3492.50
+1;Manuela Delgado de Barbosa;COMERCIAL;3582.50
+80;David Samuel Bittencourt de Burgos;JURÍDICO;3611.60
+32;Guilherme Rodrigues Filho;JURÍDICO;3723.20
+7;Eliomar Branco de Galhardo;RISCOS;3896.70
+7;Eliomar Branco de Galhardo;RECURSOS HUMANOS;3896.70
+62;Jacinto Azevedo de Gusmão;MARKETING;4123.20
+22;Ney Ramon Dávila;MARKETING;4165.40
+5;Jair Ávila Franco;FINANÇAS;4175.20
+52;Luzimara Mayra Sales de Serna;OPERAÇÃO;4235.40
+52;Luzimara Mayra Sales de Serna;RISCOS;4235.40
+64;Gilmar Chaves de Rangel;JURÍDICO;4281.50
+64;Gilmar Chaves de Rangel;OPERAÇÃO;4281.50
+89;Monique Pacheco;COMERCIAL;4327.10
+10;Leandro Beltrão de Rios;TI;4345.10
+34;Manuela Márcia Casanova de Abreu;TI;4481.50
+17;Alisson Inácio Cruz de Bragan‡a;COMERCIAL;4556.20
+73;Natal Nilo de Corona Neto;COMERCIAL;4575.10
+38;Camilo Azevedo de Abreu;MARKETING;4583.80
+47;Gabriel Ismael de Azevedo Jr.;RISCOS;4588.60
+77;David Marlon Fernandes Dutra;FINANÇAS;4588.60
+3;Eduardo Sílvio Lira de Ortiz;RECURSOS HUMANOS;4621.80
+82;Fagner Nicolau Quintana de Barbosa;TI;4635.40
+20;Francielle Fonseca de Chaves;OPERAÇÃO;4751.80
+43;Rodrigo Lozano Molina;RECURSOS HUMANOS;4775.10
+68;Natal Gonçalves Rosatto;OPERAÇÃO;4783.80
+50;Guilherme Dávila Filho;TI;4811.60
+29;Anderson Benites Fortes;FINANÇAS;4827.10
+29;Anderson Benites Fortes;COMERCIAL;4827.10
+56;Carla Guerra Meireles;JURÍDICO;4867.50
+26;Josu‚ Martinho Quintana de Rios;TI;4869.50
+59;Diego Nicolas Carrara Maia;RECURSOS HUMANOS;4927.10
+41;Taís Leila Estrada Rodrigues da Costa;COMERCIAL;4967.20
+71;Bernardo Aranda de Guerra;RISCOS;4967.20
+71;Bernardo Aranda de Guerra;TI;4967.20
+86;Joel Ricardo Duarte Leon de Arruda;MARKETING;4967.50

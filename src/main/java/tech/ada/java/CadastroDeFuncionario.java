@@ -2,16 +2,18 @@ package tech.ada.java;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CadastroDeFuncionario {
     private int ultimoIdFuncionario = 0;
-    private List<Funcionario> funcionarios = new ArrayList<>();
+    private List<Funcionario> funcionarios = new LinkedList<>();
     private final EntradaDeDados leitor;
     private final String DIGITE_OPCAO_DESEJADA = "Digite a opção desejada: ";
     private final String OPCAO_SAIR = "x";
     private final String OPCAO_CADASTRAR_FUNCIONARIO = "1";
     private final String OPCAO_LISTAR_FUNCIONARIOS = "2";
+    private final String OPCAO_CADASTRAR_EM_LOTE = "3";
 
     public CadastroDeFuncionario(EntradaDeDados leitor){
         this.leitor = leitor;
@@ -44,10 +46,19 @@ public class CadastroDeFuncionario {
                 listarFuncionarios();
                 pularLinha(2);
                 break;
+            case OPCAO_CADASTRAR_EM_LOTE:
+                carregarFuncionariosEmLote();
+                break;
             default:
                 opcaoInvalida();
                 break;
         }
+    }
+
+    private void carregarFuncionariosEmLote(){
+        List<Funcionario> novosFuncionarios = new CarregarDadosExternos().carregarFuncionariosCVS();
+        this.funcionarios.addAll(novosFuncionarios);
+
     }
 
     public void pularLinha(int numeroDeLinhas){
@@ -111,6 +122,7 @@ public class CadastroDeFuncionario {
         System.out.println("********  DIGITE A OPÇÃO DESEJADA   ******");
         System.out.println("1 - CADASTRAR FUNCIONÁRIO(A)");
         System.out.println("2 - LISTAR FUNCIONÁRIOS(AS)");
+        System.out.println("3 - CADASTRO EM LOTE (CSV)");
         System.out.println("X - SAIR");
     }
 

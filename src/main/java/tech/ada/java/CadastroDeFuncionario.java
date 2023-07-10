@@ -1,6 +1,8 @@
 package tech.ada.java;
 
 
+import ch.qos.logback.core.rolling.helper.IntegerTokenConverter;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,6 +16,8 @@ public class CadastroDeFuncionario {
     private final String OPCAO_CADASTRAR_FUNCIONARIO = "1";
     private final String OPCAO_LISTAR_FUNCIONARIOS = "2";
     private final String OPCAO_CADASTRAR_EM_LOTE = "3";
+    private final String OPCAO_BUSCA_POR_ID = "4";
+    private final String OPCAO_BUSCA_POR_NOME = "5";
 
     public CadastroDeFuncionario(EntradaDeDados leitor){
         this.leitor = leitor;
@@ -38,7 +42,7 @@ public class CadastroDeFuncionario {
             case OPCAO_SAIR:
                 break;
             case OPCAO_CADASTRAR_FUNCIONARIO:
-                this.funcionarios.add(construirFuncionario(++ultimoIdFuncionario, leitor));
+                this.inserirFuncionario(construirFuncionario(++ultimoIdFuncionario, leitor));
                 System.out.println("Cadastro realizado com sucesso!");
                 pularLinha(2);
                 break;
@@ -49,6 +53,8 @@ public class CadastroDeFuncionario {
             case OPCAO_CADASTRAR_EM_LOTE:
                 carregarFuncionariosEmLote();
                 break;
+            case OPCAO_BUSCA_POR_ID:
+                break;
             default:
                 opcaoInvalida();
                 break;
@@ -57,8 +63,18 @@ public class CadastroDeFuncionario {
 
     private void carregarFuncionariosEmLote(){
         List<Funcionario> novosFuncionarios = new CarregarDadosExternos().carregarFuncionariosCVS();
-        this.funcionarios.addAll(novosFuncionarios);
+        this.inserirFuncionario(novosFuncionarios);
 
+    }
+
+    private void inserirFuncionario(List<Funcionario> funcionarios){
+        for (Funcionario funcionario: funcionarios){
+            inserirFuncionario(funcionario);
+        }
+    }
+
+    private void inserirFuncionario(Funcionario funcionario){
+        this.funcionarios.add(funcionario);
     }
 
     public void pularLinha(int numeroDeLinhas){
@@ -123,6 +139,8 @@ public class CadastroDeFuncionario {
         System.out.println("1 - CADASTRAR FUNCIONÁRIO(A)");
         System.out.println("2 - LISTAR FUNCIONÁRIOS(AS)");
         System.out.println("3 - CADASTRO EM LOTE (CSV)");
+        System.out.println("4 - PESQUISAR POR ID");
+        System.out.println("5 - PESQUISAR POR NOME");
         System.out.println("X - SAIR");
     }
 

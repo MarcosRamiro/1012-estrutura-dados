@@ -22,6 +22,12 @@ public class EntradaDeDados implements AutoCloseable {
         return retorno;
     }
 
+    public Integer obterEntradaAsInt(){
+        Integer retorno = scanner.nextInt();
+        scanner.nextLine(); // limpar buffer
+        return retorno;
+    }
+
     @Override
     public void close() {
         scanner.close();

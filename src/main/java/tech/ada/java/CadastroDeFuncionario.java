@@ -1,15 +1,19 @@
 package tech.ada.java;
 
 
-import ch.qos.logback.core.rolling.helper.IntegerTokenConverter;
+import tech.ada.java.map.Mapa;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CadastroDeFuncionario {
     private int ultimoIdFuncionario = 0;
-    private List<Funcionario> funcionarios = new LinkedList<>();
+    private List<Funcionario> listaDeFuncionarios = new LinkedList<>();
+
+    //private Map<Integer, Funcionario> mapaIdFuncionario = new HashMap<>();
+    private Mapa<Integer, Funcionario> mapaIdFuncionario = new Mapa<>();
+    private Mapa<String, List<Funcionario>> mapaFuncionarioPorNome = new Mapa<>();
+
     private final EntradaDeDados leitor;
     private final String DIGITE_OPCAO_DESEJADA = "Digite a opção desejada: ";
     private final String OPCAO_SAIR = "x";
@@ -54,6 +58,10 @@ public class CadastroDeFuncionario {
                 carregarFuncionariosEmLote();
                 break;
             case OPCAO_BUSCA_POR_ID:
+                buscaPorIdHashMap();
+                break;
+            case OPCAO_BUSCA_POR_NOME:
+                buscaPorNomeHashMap();
                 break;
             default:
                 opcaoInvalida();
@@ -62,7 +70,19 @@ public class CadastroDeFuncionario {
     }
 
     private void carregarFuncionariosEmLote(){
-        List<Funcionario> novosFuncionarios = new CarregarDadosExternos().carregarFuncionariosCVS();
+        List<Funcionario> novosFuncionarios =
+                new CarregarDadosExternos().carregarFuncionariosCVS().stream()
+                        .distinct()
+                        .toList();
+
+//        List<Funcionario> novosFuncionariosTratados = new ArrayList<>();
+//
+//        for (Funcionario funcionario: novosFuncionarios){
+//            if(!novosFuncionariosTratados.contains(funcionario)){
+//                novosFuncionariosTratados.add(funcionario);
+//            }
+//        }
+
         this.inserirFuncionario(novosFuncionarios);
 
     }
@@ -74,7 +94,22 @@ public class CadastroDeFuncionario {
     }
 
     private void inserirFuncionario(Funcionario funcionario){
-        this.funcionarios.add(funcionario);
+        this.listaDeFuncionarios.add(funcionario);
+        this.mapaIdFuncionario.add(funcionario.id(), funcionario);
+        String[] nomes = funcionario.nome().split(" ");
+
+        for (String nome : nomes){
+            nome = nome.toLowerCase();
+            List<Funcionario> funcionarios = mapaFuncionarioPorNome.get(nome);
+
+            if(funcionarios != null){
+                funcionarios.add(funcionario);
+            } else {
+                List<Funcionario> funcionariosAux = new ArrayList<>();
+                funcionariosAux.add(funcionario);
+                mapaFuncionarioPorNome.add(nome, funcionariosAux);
+            }
+        }
     }
 
     public void pularLinha(int numeroDeLinhas){
@@ -83,14 +118,54 @@ public class CadastroDeFuncionario {
         }
     }
 
+    private void buscaPorId(){
+        System.out.print("Digite o id do funcionario: ");
+        Integer id = leitor.obterEntradaAsInt();
+        for (Funcionario funcionario: listaDeFuncionarios){
+            System.out.println("Pesquisou na Lista: " + id);
+            if(id.equals(funcionario.id())){
+                System.out.println("Funcionário localizado!");
+                System.out.println(funcionario);
+                return;
+            }
+        }
+        System.out.println("Nenhum funcionário localizado para o id: " + id);
+    }
+
+    private void buscaPorIdHashMap(){
+        System.out.print("Digite o id do funcionario: ");
+        Integer id = leitor.obterEntradaAsInt();
+        Funcionario funcionario = this.mapaIdFuncionario.get(id);
+        if(funcionario != null){
+            System.out.println("Funcionário localizado!");
+            System.out.println(funcionario);
+        } else {
+            System.out.println("Nenhum funcionário localizado para o id: " + id);
+        }
+    }
+
+    private void buscaPorNomeHashMap(){
+        System.out.print("Digite o primeiro nome do funcionario: ");
+        String primeiroNome = leitor.obterEntrada().toLowerCase();
+        List<Funcionario> funcionarios = this.mapaFuncionarioPorNome.get(primeiroNome);
+        if(funcionarios != null){
+            System.out.println("Funcionário(s) localizado(s)!");
+            for (Funcionario funcionario: funcionarios){
+                System.out.println(funcionario);
+            }
+        } else {
+            System.out.println("Nenhum funcionário localizado para o nome: " + primeiroNome);
+        }
+    }
+
     private void listarFuncionarios(){
         StringBuilder sb = new StringBuilder();
 
-        if (funcionarios.isEmpty()) {
+        if (listaDeFuncionarios.isEmpty()) {
             sb.append("[]");
         } else {
             sb.append("[\n");
-            for (Funcionario funcionario : funcionarios) {
+            for (Funcionario funcionario : listaDeFuncionarios) {
                 sb.append("\t").append(funcionario).append(",\n");
             }
             sb.setLength(sb.length() - 2); // Remover a vírgula extra após o último funcionário

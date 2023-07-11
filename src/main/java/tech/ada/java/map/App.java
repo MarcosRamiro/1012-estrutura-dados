@@ -26,5 +26,12 @@ public class App {
         System.out.println(mapa.get(1_500));
         System.out.println(mapaDoJava.get(1_500));
 
+//        Funcionario funcionario1 = new Funcionario(1, "Maria", "Vendas", 2323.00);
+//        Funcionario funcionario2 = new Funcionario(1, "Maria", "TI", 23230.00);
+//        System.out.println(funcionario1.hashCode());
+//        System.out.println(funcionario2.hashCode());
+//        System.out.println(funcionario1.equals(funcionario2));
+
+
     }
 }

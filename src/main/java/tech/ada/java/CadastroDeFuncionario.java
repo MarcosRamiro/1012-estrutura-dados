@@ -69,21 +69,15 @@ public class CadastroDeFuncionario {
         }
     }
 
+    private List<Funcionario> removerDuplicados(List<Funcionario> lista){
+        return new ArrayList<>(new HashSet<>(lista));
+    }
+
     private void carregarFuncionariosEmLote(){
         List<Funcionario> novosFuncionarios =
-                new CarregarDadosExternos().carregarFuncionariosCVS().stream()
-                        .distinct()
-                        .toList();
+                new CarregarDadosExternos().carregarFuncionariosCVS();
 
-//        List<Funcionario> novosFuncionariosTratados = new ArrayList<>();
-//
-//        for (Funcionario funcionario: novosFuncionarios){
-//            if(!novosFuncionariosTratados.contains(funcionario)){
-//                novosFuncionariosTratados.add(funcionario);
-//            }
-//        }
-
-        this.inserirFuncionario(novosFuncionarios);
+        this.inserirFuncionario(removerDuplicados(novosFuncionarios));
 
     }
 

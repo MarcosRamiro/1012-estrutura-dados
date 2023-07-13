@@ -4,7 +4,7 @@ import tech.ada.java.linkedlist.ListaLigada;
 
 import java.util.Iterator;
 
-public class Mapa<K, V> {
+public class Mapa<K, V> implements  Iterable<NoMap<K, V>> {
 
     private int tamanho;
 
@@ -39,6 +39,7 @@ public class Mapa<K, V> {
                     lista.remover(valorAtual);
                     lista.adicionar(novoChaveValor);
                     encontrouNaLista = true;
+                    break;
                 }
             }
             if(!encontrouNaLista){
@@ -67,4 +68,16 @@ public class Mapa<K, V> {
 
     }
 
+    public int getTamanho() {
+        return this.tamanho;
+    }
+
+    public ListaLigada<NoMap<K,V>>[] getTabela() {
+        return this.tabela;
+    }
+
+    @Override
+    public Iterator<NoMap<K, V>> iterator() {
+        return new MapaIterator(this);
+    }
 }

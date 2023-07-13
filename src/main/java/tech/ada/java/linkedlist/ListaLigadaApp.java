@@ -25,15 +25,15 @@ public class ListaLigadaApp {
 
         funcionarios.remover(f2);
 
-        for(Iterator<Funcionario> iter = funcionarios.iterator(); iter.hasNext();){
-            System.out.println("Funcionario: " + iter.next());
+//        for(Iterator<Funcionario> iter = funcionarios.iterator(); iter.hasNext();){
+//            System.out.println("Funcionario: " + iter.next());
+//        }
+
+        System.out.println("Funcionarios");
+
+        for (Funcionario funcionario : funcionarios){
+            System.out.println("Funcionario: " + funcionario);
         }
-
-        List<String> lista = new ArrayList<>();
-
-
-
-
 
     }
 

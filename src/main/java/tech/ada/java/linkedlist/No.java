@@ -2,7 +2,7 @@ package tech.ada.java.linkedlist;
 
 public class No<T> {
     private T dado;
-    private No proximo;
+    private No<T> proximo;
 
     public No(T dado){
         this.dado = dado;
@@ -17,11 +17,11 @@ public class No<T> {
         this.dado = dado;
     }
 
-    public No getProximo() {
+    public No<T> getProximo() {
         return proximo;
     }
 
-    public void setProximo(No proximo) {
+    public void setProximo(No<T> proximo) {
         this.proximo = proximo;
     }
 }

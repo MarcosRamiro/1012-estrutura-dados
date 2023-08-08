@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 
 public class CadastroDeFuncionario {
     private int ultimoIdFuncionario = 0;
-    private List<Funcionario> listaDeFuncionarios = new LinkedList<>();
+    private NavigableSet<Funcionario> listaDeFuncionarios = new TreeSet<>();
+
+
 
     //private Map<Integer, Funcionario> mapaIdFuncionario = new HashMap<>();
     private Mapa<Integer, Funcionario> mapaIdFuncionario = new Mapa<>();
@@ -112,6 +114,7 @@ public class CadastroDeFuncionario {
         }
     }
 
+    // Performance ruim: Big O(n)
     private void buscaPorId(){
         System.out.print("Digite o id do funcionario: ");
         Integer id = leitor.obterEntradaAsInt();

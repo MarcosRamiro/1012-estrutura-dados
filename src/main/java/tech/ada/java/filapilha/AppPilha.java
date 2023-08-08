@@ -2,6 +2,9 @@ package tech.ada.java.filapilha;
 
 import tech.ada.java.Funcionario;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class AppPilha {
 
     public static void main(String[] args) {
@@ -22,6 +25,14 @@ public class AppPilha {
         processarPagamentos.processar();
 
         processarPagamentos.visualizar();
+
+        LinkedList<String> lista = new LinkedList<>();
+        lista.add("Um");
+        lista.add("Dois");
+        lista.add("Três");
+        lista.add("Quatro");
+
+        System.out.println(lista.pollLast());
 
     }
 

@@ -21,7 +21,7 @@ public class ListaLigada<T> implements Iterable<T> {
         if(this.inicio == null){
             this.adicionar(dado);
         } else {
-            No<T> novoNo = new No(dado);
+            No<T> novoNo = new No<>(dado);
             No<T> primeiroElemento = this.inicio;
             novoNo.setProximo(primeiroElemento);
             this.inicio = novoNo;
@@ -31,13 +31,13 @@ public class ListaLigada<T> implements Iterable<T> {
 
     public void adicionar(T dado){
 
-        No<T> novoNo = new No(dado);
+        No<T> novoNo = new No<>(dado);
 
         if(this.inicio == null){
             this.inicio = novoNo;
             this.ultimo = novoNo;
         } else {
-            No ultimoElemento = this.ultimo;
+            No<T> ultimoElemento = this.ultimo;
             ultimoElemento.setProximo(novoNo);
             this.ultimo = novoNo;
         }
@@ -49,15 +49,15 @@ public class ListaLigada<T> implements Iterable<T> {
             return null;
 
         if(this.inicio.getDado().equals(dado)){
-            No inicioAnterior = this.inicio;
+            No<T> inicioAnterior = this.inicio;
             this.inicio = this.inicio.getProximo();
             inicioAnterior.setProximo(null);
             inicioAnterior.setDado(null);
             return dado;
         }
 
-        No elementoAnterior = this.inicio;
-        No elementoAtual = this.inicio.getProximo();
+        No<T> elementoAnterior = this.inicio;
+        No<T> elementoAtual = this.inicio.getProximo();
 
         while (elementoAtual != null){
 
@@ -79,7 +79,7 @@ public class ListaLigada<T> implements Iterable<T> {
     public void display(){
         System.out.println("[");
 
-        No elementoAtual = this.inicio;
+        No<T> elementoAtual = this.inicio;
 
         while (elementoAtual != null){
             System.out.println("\t" + elementoAtual.getDado() + " ");

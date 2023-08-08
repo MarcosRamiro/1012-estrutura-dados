@@ -40,7 +40,6 @@ public record Funcionario(Integer id, String nome, String departamento, double s
 
     @Override
     public boolean equals(Object o) {
-        System.out.println("Funcionario::equals");
 
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

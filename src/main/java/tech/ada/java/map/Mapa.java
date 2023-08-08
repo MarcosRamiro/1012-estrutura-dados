@@ -25,7 +25,7 @@ public class Mapa<K, V> implements  Iterable<NoMap<K, V>> {
 
     private void inserirValor(int indice, NoMap<K,V> novoChaveValor) {
 
-        ListaLigada lista = tabela[indice];
+        ListaLigada<NoMap<K, V>> lista = tabela[indice];
 
         if(lista.isListaVazia()){
             lista.adicionar(novoChaveValor);
@@ -33,8 +33,8 @@ public class Mapa<K, V> implements  Iterable<NoMap<K, V>> {
 
             boolean encontrouNaLista = false;
 
-            for (Iterator iter = lista.iterator(); iter.hasNext();){
-                NoMap<K,V> valorAtual = (NoMap<K, V>) iter.next();
+            for (Iterator<NoMap<K, V>> iter = lista.iterator(); iter.hasNext();){
+                NoMap<K,V> valorAtual = iter.next();
                 if(valorAtual.equals(novoChaveValor)){
                     lista.remover(valorAtual);
                     lista.adicionar(novoChaveValor);
@@ -51,16 +51,15 @@ public class Mapa<K, V> implements  Iterable<NoMap<K, V>> {
 
     private int calcularIndice(K chave) {
         int hashCode = chave.hashCode();
-        int indice = Math.abs(hashCode % this.tamanho);
-        return indice;
+        return Math.abs(hashCode % this.tamanho);
     }
 
     public V get(K chave){
         int indice = calcularIndice(chave);
-        ListaLigada lista = tabela[indice];
+        ListaLigada<NoMap<K, V>> lista = tabela[indice];
 
-        for (Iterator iter = lista.iterator(); iter.hasNext();){
-            NoMap<K,V> valorAtual = (NoMap<K, V>) iter.next();
+        for (Iterator<NoMap<K, V>> iter = lista.iterator(); iter.hasNext();){
+            NoMap<K,V> valorAtual = iter.next();
             if(valorAtual.getChave().equals(chave))
                 return valorAtual.getValor();
         }
@@ -78,6 +77,6 @@ public class Mapa<K, V> implements  Iterable<NoMap<K, V>> {
 
     @Override
     public Iterator<NoMap<K, V>> iterator() {
-        return new MapaIterator(this);
+        return new MapaIterator<>(this);
     }
 }
